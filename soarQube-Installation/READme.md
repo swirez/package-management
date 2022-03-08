@@ -21,6 +21,7 @@
 sudo useradd sonar
 # Grand sudo access to sonar user
 sudo echo "sonar ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/sonar
+sudo hostname sonar
 sudo su - sonar
 ```
 
@@ -37,7 +38,9 @@ sudo yum install jdk-8u131-linux-x64.rpm -y
 ```sh
 sudo wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-7.8.zip
 sudo unzip sonarqube-7.8.zip
+change name to sonar [mv sonarqube-7.8.unzip sonar
 sudo rm -rf sonarqube-7.8.zip
+Remove the java (jdk) archived file = sudo rm -rf jdk-8u131-linux-x64.rpm
 sudo mv sonarqube-7.8 sonarqube
 ```
 
@@ -49,4 +52,6 @@ sudo chmod -R 775 /opt/sonarqube/
 sh /opt/sonarqube/bin/linux-x86-64/sonar.sh start 
 sh /opt/sonarqube/bin/linux-x86-64/sonar.sh status
 ```
+sh /opt/sonarqube/bin/linux-x86-64/sonar.sh start
+sh sonar.sh start | stop | status | restart
 
