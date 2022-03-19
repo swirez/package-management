@@ -13,7 +13,7 @@
 + Attach Security Group to EC2 Instance.
 + Install java openJDK 1.8+ for SonarQube version 7.8
 
-## Create sonar user to manage the SonarQube server
+## Create sonar user to manage the SonarQube server [SonarQube must be ran as Sonar user & not ROOT user]
 ```sh
 #As a good security practice, SonarQuber Server is not advised to run sonar service as a root user, 
 # create a new user called sonar and grant sudo access to manage sonar services as follows
@@ -55,3 +55,6 @@ sh /opt/sonarqube/bin/linux-x86-64/sonar.sh status
 sh /opt/sonarqube/bin/linux-x86-64/sonar.sh start
 sh sonar.sh start | stop | status | restart
 
+use the sonarqube IP address + port 9000 to open SonarQube on the browser
+user name = admin
+password = admin
