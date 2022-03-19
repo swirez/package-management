@@ -63,3 +63,8 @@ sudo systemctl start nexus
 sudo systemctl status nexus
 echo "end of nexus installation"
 ```
+#Change the default port 8081 to 8888 on the command line
+vi nexus/etc/nexus-default.properties
+#Restart Nexus after changing the port
+ sudo systemctl restart nexus
+
